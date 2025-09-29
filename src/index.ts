@@ -27,8 +27,6 @@ app.use(express.json());
 
 app.use(express.urlencoded({ extended: true }));
 
-app.use(passport.initialize());
-app.use(passport.session());
 app.use(
   session({
     name: "session",
@@ -39,6 +37,9 @@ app.use(
     sameSite: "none",
   })
 );
+app.use(passport.initialize());
+app.use(passport.session());
+
 app.use(
   cors({
     origin: config.FRONTEND_ORIGIN,
