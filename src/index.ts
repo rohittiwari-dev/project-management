@@ -29,7 +29,7 @@ app.use(express.urlencoded({ extended: true }));
 
 app.use(
   session({
-    name: "session",
+    name: "session-pms",
     keys: [config.SESSION_SECRET],
     maxAge: 24 * 60 * 60 * 1000,
     secure: true,
