@@ -51,12 +51,8 @@ app.use(
 app.get(
   `/`,
   asyncHandler(async (req: Request, res: Response, next: NextFunction) => {
-    throw new BadRequestException(
-      "This is a bad request",
-      ErrorCodeEnum.AUTH_INVALID_TOKEN
-    );
     return res.status(HTTPSTATUS.OK).json({
-      message: "Hello Subscribe to the channel & share",
+      message: "Route Working Perfectly",
     });
   })
 );
