@@ -5,6 +5,7 @@ A robust Node.js backend API for the project management system, built with Expre
 ## ✨ Features
 
 ### 🔐 Authentication & Security
+
 - **Multiple Auth Methods**:
   - Local authentication (email/password)
   - Google OAuth 2.0 integration
@@ -13,17 +14,20 @@ A robust Node.js backend API for the project management system, built with Expre
 - **CORS Configuration**: Proper cross-origin resource sharing setup
 
 ### 🏢 Workspace Management API
+
 - **Multi-workspace Support**: Create and manage multiple workspaces
 - **Role-based Access Control**: Owner, Admin, and Member roles with granular permissions
 - **Member Management**: Invite, remove, and manage workspace members
 - **Workspace Analytics**: Track workspace performance and metrics
 
 ### 📊 Project Management API
+
 - **Project CRUD Operations**: Create, read, update, delete projects
 - **Project Analytics**: Monitor project progress and performance
 - **Permission-based Access**: Control who can create, edit, and delete projects
 
 ### ✅ Task Management API
+
 - **Task Status Tracking**: Backlog, Todo, In Progress, In Review, Done
 - **Priority Levels**: Low, Medium, High priority tasks
 - **Task Assignment**: Assign tasks to workspace members
@@ -32,18 +36,21 @@ A robust Node.js backend API for the project management system, built with Expre
 ## 🛠️ Tech Stack
 
 ### Core Technologies
+
 - **Runtime**: Node.js
 - **Framework**: Express.js
 - **Language**: TypeScript
 - **Database**: MongoDB with Mongoose ODM
 
 ### Authentication & Security
+
 - **Authentication**: Passport.js (Local & Google OAuth)
 - **Session Management**: cookie-session
 - **Password Hashing**: bcrypt
 - **CORS**: cors middleware
 
 ### Validation & Utilities
+
 - **Schema Validation**: Zod
 - **Environment Variables**: dotenv
 - **UUID Generation**: uuid
@@ -119,6 +126,7 @@ backend/
 ## 🚀 Getting Started
 
 ### Prerequisites
+
 - Node.js (v16 or higher)
 - MongoDB database
 - npm or yarn package manager
@@ -148,21 +156,25 @@ NODE_ENV=development
 ### Installation & Setup
 
 1. **Install dependencies**
+
 ```bash
 npm install
 ```
 
 2. **Setup database**
+
 ```bash
 npm run seed  # Seed initial roles
 ```
 
 3. **Start development server**
+
 ```bash
 npm run dev
 ```
 
 4. **Build for production**
+
 ```bash
 npm run build
 npm start
@@ -173,6 +185,7 @@ The API server will be available at http://localhost:5000
 ## 📊 API Endpoints
 
 ### Authentication Routes
+
 ```
 POST   /api/auth/register              # User registration
 POST   /api/auth/login                 # User login
@@ -182,12 +195,14 @@ GET    /api/auth/google/callback       # Google OAuth callback
 ```
 
 ### User Routes
+
 ```
 GET    /api/users/profile              # Get current user profile
 PUT    /api/users/profile              # Update user profile
 ```
 
 ### Workspace Routes
+
 ```
 GET    /api/workspaces                 # Get user workspaces
 POST   /api/workspaces                 # Create workspace
@@ -202,6 +217,7 @@ DELETE /api/workspaces/:id/members/:memberId       # Remove member
 ```
 
 ### Project Routes
+
 ```
 GET    /api/workspaces/:workspaceId/projects                    # Get workspace projects
 POST   /api/workspaces/:workspaceId/projects                    # Create project
@@ -212,6 +228,7 @@ GET    /api/workspaces/:workspaceId/projects/:id/analytics     # Get project ana
 ```
 
 ### Task Routes
+
 ```
 GET    /api/workspaces/:workspaceId/projects/:projectId/tasks           # Get project tasks
 POST   /api/workspaces/:workspaceId/projects/:projectId/tasks           # Create task
@@ -223,11 +240,13 @@ DELETE /api/workspaces/:workspaceId/projects/:projectId/tasks/:id       # Delete
 ## 🔒 Permissions System
 
 ### Roles
+
 - **OWNER**: Full access to workspace
 - **ADMIN**: Management permissions (cannot delete workspace)
 - **MEMBER**: Basic access permissions
 
 ### Permissions Matrix
+
 ```typescript
 const Permissions = {
   // Workspace permissions
@@ -257,12 +276,14 @@ const Permissions = {
 ## 🏗️ Architecture
 
 ### Design Patterns
+
 - **MVC Architecture**: Clear separation of Models, Views (routes), and Controllers
 - **Service Layer**: Business logic abstracted into service classes
 - **Middleware Pattern**: Authentication, error handling, and validation middlewares
 - **Repository Pattern**: Data access through Mongoose models
 
 ### Key Features
+
 - **Type Safety**: Full TypeScript implementation
 - **Validation**: Zod schemas for request validation
 - **Error Handling**: Centralized error handling with custom error classes
@@ -270,6 +291,7 @@ const Permissions = {
 - **Database**: MongoDB with Mongoose ODM for data modeling
 
 ### Database Models
+
 - **User**: User account information
 - **Account**: OAuth account linkage
 - **Workspace**: Project workspace container
@@ -294,12 +316,14 @@ npm run test:coverage
 ## 🚀 Deployment
 
 ### Environment Setup
+
 1. Set production environment variables
 2. Configure MongoDB connection
 3. Set up Google OAuth credentials
 4. Configure CORS for production domain
 
 ### Build & Deploy
+
 ```bash
 npm run build
 npm start
@@ -324,6 +348,7 @@ The API uses centralized error handling with custom error classes:
 ## 📝 API Response Format
 
 ### Success Response
+
 ```json
 {
   "data": {},
@@ -332,6 +357,7 @@ The API uses centralized error handling with custom error classes:
 ```
 
 ### Error Response
+
 ```json
 {
   "error": {
@@ -352,6 +378,7 @@ The API uses centralized error handling with custom error classes:
 ## 📞 Support
 
 For backend-specific issues, please check:
+
 1. Database connection
 2. Environment variables
 3. Authentication configuration
